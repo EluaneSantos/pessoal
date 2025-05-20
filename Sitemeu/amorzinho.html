@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anne & Fulaninho 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #fbd3e9, #bb377d);
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px;
+      font-size: 2.5rem;
+      background: #ff69b4;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    section {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+    }
+    h2 {
+      color: #fffdd0;
+    }
+    .timeline ul {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline li {
+      margin: 20px 0;
+      background: rgba(255,255,255,0.2);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .letter {
+      white-space: pre-wrap;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    .game-area {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff1493;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      color: red;
+      animation: float 2s ease-out forwards;
+    }
+    @keyframes float {
+      0% {transform: translateY(0); opacity: 1;}
+      100% {transform: translateY(-200px); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Anne & Fulaninho 💘
+  </header>
+
+  <section>
+    <h2>📅 Nossa Linha do Tempo</h2>
+    <div class="timeline">
+      <ul>
+        <li>💬 Primeiro "oi": 15/03/2024</li>
+        <li>🍕 Primeiro rolê: 22/03/2024</li>
+        <li>💏 Primeiro beijo: 01/04/2024</li>
+        <li>💍 Viramos um casalzão: 12/04/2024</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>💌 Uma Carta pra Você</h2>
+    <div class="letter">
+      Oi meu amor,
+      
+      Só queria dizer que desde que você apareceu, minha vida ficou tipo um joguinho com gráficos ruins, mas com a melhor história do mundo. Você é meu bug favorito, minha fase bônus, meu combo perfeito. Te amo além dos limites do universo e do cache do navegador. 💖
+
+      Sempre sua, Anne.
+    </div>
+  </section>
+
+  <section>
+    <h2>🎶 Nossa Música</h2>
+    <audio controls autoplay loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      Teu navegador não suporta áudio. :(
+    </audio>
+  </section>
+
+  <section>
+    <h2>🎮 Jogando com o Amor</h2>
+    <p>Clique no botão e veja os corações voarem! 💕</p>
+    <button onclick="explodeLove()">Espalhar amor</button>
+    <div class="game-area" id="game"></div>
+  </section>
+
+  <script>
+    function explodeLove() {
+      const gameArea = document.getElementById('game');
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = Math.random() * 90 + '%';
+        heart.style.top = '80%';
+        gameArea.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 2000);
+      }
+    }
+  </script>
+</body>
+</html>

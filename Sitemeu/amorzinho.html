@@ -1,136 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anne & Fulaninho 💖</title>
+  <title>Nosso Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(to right, #fbd3e9, #bb377d);
-      color: #fff;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom, #a0e9ff, #fef6ff);
       text-align: center;
+      padding: 30px;
+      color: #333;
     }
-    header {
-      padding: 40px 20px;
-      font-size: 2.5rem;
-      background: #ff69b4;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    h1 {
+      font-size: 3em;
+      color: #ff4fa0;
     }
-    section {
-      margin: 40px auto;
+    p {
+      font-size: 1.5em;
       max-width: 800px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 192, 203, 0.6);
+      margin: 20px auto;
     }
-    h2 {
-      color: #fffdd0;
+    img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .timeline ul {
-      list-style: none;
-      padding: 0;
-    }
-    .timeline li {
-      margin: 20px 0;
-      background: rgba(255,255,255,0.2);
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .letter {
-      white-space: pre-wrap;
-      text-align: left;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      border-radius: 15px;
+    .timer {
+      font-size: 1.5em;
       margin-top: 20px;
+      color: #0077b6;
     }
-    .game-area {
-      margin-top: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      border: none;
-      background: #ff1493;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .heart {
-      position: absolute;
-      font-size: 2rem;
-      color: red;
-      animation: float 2s ease-out forwards;
-    }
-    @keyframes float {
-      0% {transform: translateY(0); opacity: 1;}
-      100% {transform: translateY(-200px); opacity: 0;}
+    audio {
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <header>
-    Anne & Fulaninho 💘
-  </header>
+  <h1>Nosso Amor</h1>  <img src="/mnt/data/A_digital_illustration_depicts_a_young_couple_in_a.png" alt="Nosso desenho juntos">  <p>
+    Eu não gostava que me encostassem, até conhecer você. Seu abraço me acalma, me faz sentir que tá tudo bem, que posso finalmente respirar. Você me mostrou o quanto é bom viver a inocência de um amor sincero.
+    Eu costumava odiar você — e olha que ironia — hoje você é uma parte de mim.
+    Te amar é leve, é natural, é como rir de algo bobo e se perder no olhar da pessoa que entende até o seu silêncio. A gente era só amigo, né? Mas todo mundo via, menos a gente. Até que a vida deu um jeitinho… e hoje eu posso dizer com o coração tranquilo: eu amo você.
+  </p>  <div class="timer">
+    Estamos nos amando há: <span id="contador"></span>
+  </div>  <audio controls autoplay loop>
+    <source src="https://www.dropbox.com/scl/fi/77gnk6nmfltx49ez5n1h5/Sonho-de-Amor-Zez-di-Camargo-Luciano.mp3?rlkey=wnz7xrwvl4ogipk4z1r7qaxc1&dl=1" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>  <script>
+    // Data do início do amorzinho <3
+    const inicio = new Date("2025-06-10T00:00:00");
+    const contador = document.getElementById("contador");
 
-  <section>
-    <h2>📅 Nossa Linha do Tempo</h2>
-    <div class="timeline">
-      <ul>
-        <li>💬 Primeiro "oi": 15/03/2024</li>
-        <li>🍕 Primeiro rolê: 22/03/2024</li>
-        <li>💏 Primeiro beijo: 01/04/2024</li>
-        <li>💍 Viramos um casalzão: 12/04/2024</li>
-      </ul>
-    </div>
-  </section>
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = agora - inicio;
 
-  <section>
-    <h2>💌 Uma Carta pra Você</h2>
-    <div class="letter">
-      Oi meu amor,
-      
-      Só queria dizer que desde que você apareceu, minha vida ficou tipo um joguinho com gráficos ruins, mas com a melhor história do mundo. Você é meu bug favorito, minha fase bônus, meu combo perfeito. Te amo além dos limites do universo e do cache do navegador. 💖
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
 
-      Sempre sua, Anne.
-    </div>
-  </section>
-
-  <section>
-    <h2>🎶 Nossa Música</h2>
-    <audio controls autoplay loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-      Teu navegador não suporta áudio. :(
-    </audio>
-  </section>
-
-  <section>
-    <h2>🎮 Jogando com o Amor</h2>
-    <p>Clique no botão e veja os corações voarem! 💕</p>
-    <button onclick="explodeLove()">Espalhar amor</button>
-    <div class="game-area" id="game"></div>
-  </section>
-
-  <script>
-    function explodeLove() {
-      const gameArea = document.getElementById('game');
-      for (let i = 0; i < 10; i++) {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML = '❤️';
-        heart.style.left = Math.random() * 90 + '%';
-        heart.style.top = '80%';
-        gameArea.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 2000);
-      }
+      contador.textContent = ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos;
     }
-  </script>
-</body>
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script></body>
 </html>
